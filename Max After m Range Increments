@@ -1,0 +1,32 @@
+class Solution {
+    public int findMax(int n, int[] a, int[] b, int[] k) {
+       
+       int[] arr=new int[n];
+       
+     
+     for(int i=0;i<a.length;i++){
+         
+         arr[a[i]] +=k[i];
+         
+         if(b[i] +1 < n){
+             arr[b[i]+1] -=k[i];
+         }
+     }
+           
+                 
+               int max=0;
+                int current=0;
+      for(int i=0; i<arr.length;i++){
+          current +=arr[i];
+          
+          if(current > max) {
+              max =current;
+          }
+      }
+          
+      
+      
+       return max;
+       
+    }
+}
